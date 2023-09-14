@@ -1,20 +1,95 @@
+/* Existing styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-
+body {
+  /* Add any body styles you need */
 }
+
 .App {
   text-align: center;
   height: 100vh;
   width: 100vw;
+  display: flex; /* Display as flex to organize navbar, main content, and sidebar */
+  flex-direction: column;
+}
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+/* Chat Interface Styles */
+.chat-interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.messages-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 90%; /* Set the height to 90% of the available vertical space */
+  width: 90%;
+  overflow-y: auto;
 }
 
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  width: 80%; /* Adjusted width for full-width messages */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%; /* Adjusted width for full-width input container */
+}
+
+.input-container > * {
+  margin-right: 10px;
+}
+
+/* Sidebar Styles */
+/* Sidebar Styles */
+.sidebar {
+  width: 20%; /* Set the width of the sidebar */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  padding: 10px; /* Add padding to create some space around the header */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.buttonContentLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* Content Styles */
+.content {
+  flex-grow: 1; /* Make the content section expand to fill available space */
+  padding: 10px; /* Add padding to create some space around the content */
+}
+
+/* Footer Styles */
+.footer {
+  padding: 10px; /* Add padding to create some space around the footer */
+}
 
