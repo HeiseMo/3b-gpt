@@ -12,31 +12,33 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex; /* Display as flex to organize navbar, main content, and sidebar */
-  flex-direction: column;
+  flex-direction: row;
+  overflow: hidden; /* Hide overflow content */
 }
+
 .main-content {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
 }
+
 /* Chat Interface Styles */
 .chat-interface {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-direction: column;
   height: 100%;
-  width: 80%;
+  width: 100%; /* Use 100% width for the chat interface */
 }
 
 .messages-container {
   flex: 1;
   display: flex;
   justify-content: center;
-  height: 90%; /* Set the height to 90% of the available vertical space */
-  width: 90%;
+  height: 90vh; /* Set the height to 90% of the viewport height */
+  width: 100%; /* Use 100% width for the messages container */
   overflow-y: auto;
 }
 
@@ -44,15 +46,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100%;
-  width: 80%; /* Adjusted width for full-width messages */
+  width: 100%;
+  padding: 10px; /* Add padding for message container */
 }
 
 .input-container {
   display: flex;
   align-items: center;
   padding: 10px;
-  width: 100%; /* Adjusted width for full-width input container */
+  width: 100%; /* Use 100% width for the input container */
 }
 
 .input-container > * {
@@ -60,12 +62,18 @@ body {
 }
 
 /* Sidebar Styles */
-/* Sidebar Styles */
 .sidebar {
-  width: 20%; /* Set the width of the sidebar */
   height: 100%;
   display: flex;
   flex-direction: column;
+  flex-shrink: 1; /* Initial width, adjust as needed */
+  transition: flex-shrink 0.3s ease; /* Add a transition for smooth animation */
+}
+
+.collapsed {
+  flex-shrink: 0; /* Collapsed width */
+  /* Other styles for the collapsed state */
+  width: 0;
 }
 
 /* Header Styles */
@@ -74,14 +82,16 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between; /* Adjust alignment for header content */
 }
+
 .buttonContentLeft {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
+
 /* Content Styles */
 .content {
   flex-grow: 1; /* Make the content section expand to fill available space */
@@ -92,4 +102,3 @@ body {
 .footer {
   padding: 10px; /* Add padding to create some space around the footer */
 }
-
